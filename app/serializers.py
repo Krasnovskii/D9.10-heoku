@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 
 class AuthorSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name']
@@ -12,8 +13,6 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-
-    author = AuthorSerializer(required=False)
 
     class Meta:
         model = Post
